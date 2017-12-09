@@ -93,7 +93,7 @@ if __name__ == "__main__":
     stop_words_list = process_stop_word('/Users/pengtuo/Downloads/corpus/stop_words_ch.txt')
 
     # 对训练集进行分词
-    corpus_path = "/Users/pengtuo/Downloads/corpus/train_data_1/"  # 未分词分类语料库路径
+    corpus_path = "/Users/pengtuo/Downloads/corpus/train_data/"  # 未分词分类语料库路径
     seg_path = "/Users/pengtuo/Downloads/corpus/train_data_seg/"  # 分词后分类语料库路径
     # corpus_segment(corpus_path,seg_path)
 

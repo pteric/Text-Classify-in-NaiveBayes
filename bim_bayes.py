@@ -96,14 +96,13 @@ def predict(test_set, wordtimes_ndarray):
             content=test_set.contents[i],
             wordtimes_ndarray=wordtimes_ndarray
         )
-        clock += 1
         if prediction == labels[i]:
             cate_TP[prediction] += 1
-            print clock
         else:
             cate_FP[prediction] += 1
             cate_FN[labels[i]] += 1
-            print clock
+        clock += 1
+        print clock
 
     for cate in category:
         cate_accuracy[cate] = float(cate_TP.get(cate, 1)) / (cate_TP.get(cate, 1) + cate_FP.get(cate, 1))

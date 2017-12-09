@@ -5,11 +5,7 @@ import os
 from xml.dom import minidom  
 from urlparse import urlparse  
 import codecs  
-import importlib,sys  
-# default_encoding = 'utf-8'  
-# if sys.getdefaultencoding() != default_encoding:  
-#     importlib.reload(sys)  
-#     sys.setdefaultencoding(default_encoding)  
+import importlib,sys
   
 def file_fill(file_dir): #得到文本.txt的路径
     count = 0
@@ -67,42 +63,6 @@ def sougou_file_read(file_dir): #得到文本.txt的路径
             print '-' * 25
 
 
-def allsite_file_read(file_dir):
-    text_count  = 0
-    for root, dirs, files in os.walk(file_dir):  
-        for f in files:  
-            tmp_file = file_dir + "/" + f
-            print '-' * 25
-            print 'Dealing with %s' % f
-            try:
-                doc = minidom.parse(tmp_file)
-                root = doc.documentElement
-                claimtitle = root.getElementsByTagName("contenttitle")
-                claimtext = root.getElementsByTagName("content")  
-                claimurl = root.getElementsByTagName("url")  
-                for index in range(0, len(claimurl)):
-                    if (claimtext[index].firstChild == None or claimtitle[index].firstChild == None):  
-                        continue
-                    claim_url = claimurl[index].firstChild.data
-                    url = urlparse(claim_url)
-                    file_url = path + url.hostname
-                    if not os.path.exists(file_url):
-                        os.makedirs(file_url)
-                    fp_in = file(file_url + "/%d.txt" % (len(os.listdir(file_url)) + 1),"w")
-                    fp_in.write((claimtitle[index].firstChild.data).encode('utf8'))
-                    fp_in.write((claimtext[index].firstChild.data).encode('utf8'))              
-            except (xml.parsers.expat.ExpatError, NameError) as e:
-                print '*' * 40
-                print 'Whoops, there is an error ---->', e
-                print '*' * 40
-            else:
-                text_count += 1
-                print "Successed! %s has been writen, no.%d " % (f, text_count)
-            print '-' * 25
-
-        
-
-
 if __name__=="__main__":
     file_fill("/Users/pengtuo/Downloads/allsites_all")
     
@@ -128,6 +88,4 @@ if __name__=="__main__":
         'business.sohu.com': 'shangye'
     }
  
-    # sougou_file_read("/Users/pengtuo/Downloads/sougou_after")
-
-    allsite_file_read('/Users/pengtuo/Downloads/allsites_after')
+    sougou_file_read("/Users/pengtuo/Downloads/sougou_after")
