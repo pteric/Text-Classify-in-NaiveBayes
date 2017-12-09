@@ -1,6 +1,6 @@
 # 新闻文本分类 -- 自实现朴素贝叶斯分类器
 
-本项目利用100万的新闻文本，利用[朴素贝叶斯](https://en.wikipedia.org/wiki/Naive_Bayes_classifier)来进行文本分类，新闻包括[car、culture、energy、entertainment、finance、health、house、IT、military、sport]十个类，每个类10w条新闻，并且其中，50万数据用以训练，50万数据用以测试
+本项目利用100万的新闻文本，利用[朴素贝叶斯](https://en.wikipedia.org/wiki/Naive_Bayes_classifier)来进行文本分类，新闻包括[car、culture、energy、entertainment、finance、health、house、IT、military、sport]十个类，每个类10w条新闻，并且其中，50万数据用以训练，50万数据用以测试
 
 ## 项目文件包括：
 - `dataframe_test.py`：一个`pandas.dataframe`的用法测试文件；
