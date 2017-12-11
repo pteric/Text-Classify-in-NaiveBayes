@@ -55,7 +55,8 @@ def get_class_wordtimes(category, words_vect, word_times_path, cate_page_num):
     df = df.fillna(-10)
     return df
 
-    
+
+# 分类器预测核心
 def classify(content=None, wordtimes_ndarray=None):
 
     per_page_words = set(content.decode('utf-8').split())
@@ -114,10 +115,6 @@ def predict(test_set, wordtimes_ndarray):
         average_accuracy += cate_accuracy[cate]
         average_recall += cate_recall[cate]
         average_f += cate_F_measure[cate]
-
-    # accuracy_rate = float(TP) / (TP + FP)
-    # recall_rate = float(TP) / (TP + FN)
-    # F_measure = float(2*TP) / (2*TP + FN + FP)
 
     average_accuracy = average_accuracy / 10
     average_recall = average_recall / 10

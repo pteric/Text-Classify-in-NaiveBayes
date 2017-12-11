@@ -4,7 +4,7 @@
 
 ## 项目文件包括：
 - `dataframe_test.py`：一个`pandas.dataframe`的用法测试文件；
-- `get_data_format.py`：用以分析[搜狗实验室新闻语料](http://www.sogou.com/labs/resource/cs.php)，将其中混合的新闻分出多个类；
+- `get_data_format.py`：用以分析[搜狗实验室新闻语料](http://www.sogou.com/labs/resource/cs.php)，将其中混合的新闻分出多个类（但是这个语料库的新闻质量不高且不均匀，我用八爪鱼自行爬取了100W，也建议大家自行爬取）
 - `segment_script.py`：数据预处理，用来将原新闻预料分词，其中主要利用了[jieba](https://github.com/fxsjy/jieba)分词，分词的要求为：
     - 只取汉字
     - 去掉停用词

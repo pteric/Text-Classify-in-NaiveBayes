@@ -63,7 +63,8 @@ def caculate_chi_write(category, cate_page_num, cate_word_times):
 
             not_kv_out_class = all_page_out_class - kv_out_class  # 本类所有别外没有用到这个词的文档数目  相当于d
 
-            chi_dic[kv] = ((kv_in_class*not_kv_out_class - kv_out_class*not_kv_in_class) ** 2) / ((kv_in_class + kv_out_class) * (not_kv_in_class + not_kv_out_class))
+            chi_dic[kv] = ((kv_in_class*not_kv_out_class - kv_out_class*not_kv_in_class) ** 2) / \
+                          ((kv_in_class + kv_out_class) * (not_kv_in_class + not_kv_out_class))
             print kv, chi_dic[kv]
 
         # 按照chi值降序写入class_{cate}_chi_order.txt文件
